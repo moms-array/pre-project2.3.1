@@ -9,20 +9,20 @@
     </style>
 </head>
 <body>
-    <h1>th:each</h1>
+    <h1>Users</h1>
 
     <table border = "1">
 
         <tr>
-            <th>Series</th>
-            <th>Model</th>
-            <th>Type</th>
+            <th>id</th>
+            <th>name</th>
+            <th>lastname</th>
         </tr>
 
-        <tr th:each="car, state: ${cars}">
-            <td th:utext="${car.series}">Series</td>
-            <td th:utext="${car.model}">Model</td>
-            <td th:utext="${car.type}">Type</td>
+        <tr th:each="user, state: ${users}">
+            <td th:utext="${user.id}">Series</td>
+            <td th:utext="${user.name}">Model</td>
+            <td th:utext="${user.lastname}">Type</td>
         </tr>
 
     </table>

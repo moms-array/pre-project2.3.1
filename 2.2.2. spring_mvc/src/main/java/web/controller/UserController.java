@@ -1,21 +1,21 @@
 package web.controller;
 
-import Database.Service.CarService;
-import Database.Service.CarServiceImp;
+import web.Service.UserService;
+import web.Service.UserServiceImp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class CarController {
-    CarService cars = new CarServiceImp();
-    CarController(){
+public class UserController {
+    UserService users = new UserServiceImp();
+    UserController(){
     }
 
-    @GetMapping(value = "/cars")
+    @GetMapping(value = "/users")
     public String printCar(ModelMap modelMap,@RequestParam(defaultValue = "5") int count){
-        modelMap.addAttribute("cars",cars.getCar(count));
+        modelMap.addAttribute("users",users.getUser(count));
         return "index1";
     }
 }
