@@ -24,7 +24,7 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public User getById(int id) {
+    public User getById(long id) {
         return userDao.getById(id);
     }
 
@@ -43,6 +43,6 @@ public class UserServiceImp implements UserService {
     @Transactional
     @Override
     public void edit(User user) {
-        userDao.delete(user);
+        userDao.edit(user);
     }
 }

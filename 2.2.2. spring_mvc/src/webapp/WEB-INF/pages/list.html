@@ -23,14 +23,14 @@
         </tr>
 
         <tr th:each="user, state: ${users}">
-            <td th:utext="${user.id}">id</td>
-            <td th:utext="${user.name}">name</td>
-            <td th:utext="${user.lastname}">lastname</td>
-            <td th:utext="${user.email}">email</td>
-            <td><a href="edit/${user.id}">edit</a> </td>
-            <td><a href="delete/${user.id}">delete</a> </td>
+            <td th:text="${user.id}">id</td>
+            <td th:text="${user.name}">name</td>
+            <td th:text="${user.lastname}">lastname</td>
+            <td th:text="${user.email}">email</td>
+            <td><a th:href="@{/edit/{id}(id = ${user.getId()})}"> edit </a>  </td>
+            <td><a th:href="@{/delete/{id}(id = ${user.getId()})}" >delete</a> </td>
         </tr>
-        <button type="${add}">add user</button>
+        <a th:href="@{/add}">add user</a>
     </table>
 </body>
 </html>
